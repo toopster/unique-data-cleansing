@@ -10,5 +10,8 @@ df = df.astype(str)
 valid_df = df[df['email'].str.contains("@")]
 #print(valid_df)
 
-ultra_valid_df = valid_df[valid_df['email'].str.contains(".co.uk|.com")]
+ultra_valid_df = valid_df[valid_df['email'].str.contains(".co.uk|.com|.org|.org.uk")]
 print(ultra_valid_df)
+
+final_df = ultra_valid_df[ultra_valid_df["email"].str.contains(" ") == False]
+print(final_df)
